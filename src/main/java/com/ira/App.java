@@ -40,13 +40,13 @@ public class App
         magicList1.add(plant);
         magicList1.add(board);
 
-        MagicBox magicBox1 = new MagicBox(magicList1);
-        System.out.println("Total price: " + magicBox1.getTotalPrice());
-        System.out.println("Total weight: " + magicBox1.getTotalWeight());
+        MagicBoxNotGeneric magicBoxNotGeneric1 = new MagicBoxNotGeneric(magicList1);
+        System.out.println("Total price: " + magicBoxNotGeneric1.getTotalPrice());
+        System.out.println("Total weight: " + magicBoxNotGeneric1.getTotalWeight());
 
         //should fail
         magicList1.add(lamp);
-        MagicBox magicBox2 = new MagicBox(magicList1);
+        MagicBoxNotGeneric magicBoxNotGeneric2 = new MagicBoxNotGeneric(magicList1);
         System.out.println("test");
     }
 }

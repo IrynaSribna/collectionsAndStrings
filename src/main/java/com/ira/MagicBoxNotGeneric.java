@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Iryna on 2/26/15.
  */
-public class MagicBox {
+public class MagicBoxNotGeneric {
 
     private static final int ALLOWED_SIZE = 3;
 
@@ -28,7 +28,7 @@ public class MagicBox {
         }
     }
 
-    public MagicBox(List<MyKeaItem> items) {
+    public MagicBoxNotGeneric(List<MyKeaItem> items) {
         setItems(items);
     }
 
