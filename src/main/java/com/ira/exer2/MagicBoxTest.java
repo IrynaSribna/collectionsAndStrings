@@ -9,7 +9,7 @@ import java.util.List;
 public class MagicBoxTest {
 
     public static void main(String[] args) {
-        List items =new LinkedList<>();
+        List items = new LinkedList<>(); //works only in Java 7
         items.add(new Chair());
         items.add(new Lamp());
         items.add(new BeanBag());
