@@ -1,9 +1,9 @@
-package com.ira.exer5;
+package com.ira.exer5_6;
 
 /**
  * Created by Iryna on 2/28/15.
  */
-public class Table {
+public class Table extends MagicBox {
 
     private Float height;
 
@@ -16,7 +16,7 @@ public class Table {
     private Float weight;
 
     public Double getPrice() {
-        return price;
+        return 125.6;
     }
 
     public void setPrice(Double price) {
@@ -24,7 +24,7 @@ public class Table {
     }
 
     public Float getWeight() {
-        return weight;
+        return 10.4f;
     }
 
     public void setWeight(Float weight) {

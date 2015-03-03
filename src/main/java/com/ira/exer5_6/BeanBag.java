@@ -1,9 +1,9 @@
-package com.ira.exer5;
+package com.ira.exer5_6;
 
 /**
  * Created by Iryna on 2/28/15.
  */
-public class Chair {
+public class BeanBag extends MagicBox {
 
     private String color;
 
@@ -11,8 +11,10 @@ public class Chair {
 
     private Float weight;
 
-    public Chair() {
-        price = new Double(5);
+    private String material;
+
+    public BeanBag() {
+        price = new Double(33);
     }
 
     public String getColor() {
@@ -32,14 +34,22 @@ public class Chair {
     }
 
     public Float getWeight() {
-        return weight;
+        return 2.1f;
     }
 
     public void setWeight(Float weight) {
         this.weight = weight;
     }
 
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
     public String getName() {
-        return "Chair";
+        return "Bean Bag";
     }
 }
