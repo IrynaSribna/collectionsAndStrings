@@ -35,8 +35,9 @@ public class Stock {
         PrintUtility.stockPrint(availableItems);
 
         System.out.println();
-        System.out.println("Results of search inside the Description:");
-        PrintUtility.searchResultPrint("with", availableItems);
+        String keyword = "table";
+        System.out.println("Results of search inside the Description by keyword: " + keyword);
+        PrintUtility.searchResultPrint(keyword, availableItems);
 
     }
 

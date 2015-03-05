@@ -3,7 +3,7 @@ package com.ira.exer2;
 /**
  * Created by Iryna on 2/28/15.
  */
-public class Lamp {
+public class MyLamp implements Furniture{
 
     private Double price;
 
@@ -11,7 +11,7 @@ public class Lamp {
 
     private Float weight;
 
-    public Lamp() {
+    public MyLamp() {
         price = new Double(12);
     }
 
@@ -37,5 +37,14 @@ public class Lamp {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Lamp{" +
+                "price=" + price +
+                ", type='" + type + '\'' +
+                ", weight=" + weight +
+                '}';
     }
 }

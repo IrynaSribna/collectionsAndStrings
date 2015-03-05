@@ -9,25 +9,21 @@ import java.util.List;
 public class MagicBoxTest {
 
     public static void main(String[] args) {
-        List items = new LinkedList<>(); //works only in Java 7
-        items.add(new Chair());
-        items.add(new Lamp());
-        items.add(new BeanBag());
+        List<Furniture> furniture = new LinkedList<>();
+        furniture.add(new MyLamp());
+        furniture.add(new Chair());
+        furniture.add(new BeanBag());
 
-        MagicBox magicBox = new MagicBox(items);
+        MagicBox<Furniture> items = new MagicBox<>(furniture);
 
         System.out.printf("Total price: ");
-        System.out.println(magicBox.getTotalPrice());
+        System.out.println(items.getTotalPrice());
 
-        //exception
-        List newItems = new LinkedList<>();
-        newItems.add(new Lamp());
-        newItems.add(new Board());
-        newItems.add(new Table());
+        Furniture item = items.getItem(0);
 
-        MagicBox magicBox1 = new MagicBox(newItems);
 
-        System.out.println(magicBox1.getTotalPrice());
+
+        System.out.println(item);
 
     }
 }

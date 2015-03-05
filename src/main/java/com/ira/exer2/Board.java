@@ -3,7 +3,7 @@ package com.ira.exer2;
 /**
  * Created by Iryna on 2/28/15.
  */
-public class Board {
+public class Board{
 
     private String color;
 
@@ -14,4 +14,6 @@ public class Board {
     public void setColor(String color) {
         this.color = color;
     }
+
+
 }

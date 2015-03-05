@@ -3,7 +3,7 @@ package com.ira.exer2;
 /**
  * Created by Iryna on 2/28/15.
  */
-public class BeanBag {
+public class BeanBag implements Furniture{
 
     private String color;
 

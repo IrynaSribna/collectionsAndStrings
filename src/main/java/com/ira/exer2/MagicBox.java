@@ -1,6 +1,5 @@
 package com.ira.exer2;
 
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -8,38 +7,33 @@ import java.util.List;
  */
 public class MagicBox<T> {
 
-    public List<T> items;
+    List<? extends Furniture> items;
 
-    private Double price;
+    public static int ALLOWED_SIZE = 3;
 
-    public MagicBox(List<T> items) {
-        this.items = items;
-    }
 
-    public void setItems(List<T> items) {
+
+    public MagicBox(List<? extends Furniture> items) {
+        if (items.size() > ALLOWED_SIZE) {
+            throw new IllegalArgumentException("Too many items");
+        }
         this.items = items;
     }
 
     public Double getTotalPrice() {
-        price = new Double(0);
-        Iterator iterator = items.iterator();
-        while (iterator.hasNext()) {
-            Object o = iterator.next();
-            if (o instanceof Chair) {
-                price += ((Chair) o).getPrice();
-            } else if (o instanceof  BeanBag) {
-                price += ((BeanBag) o).getPrice();
-            } else if (o instanceof Lamp) {
-                price += ((Lamp) o).getPrice();
-            } else if (o instanceof Table) {
-                price += ((Table) o).getPrice();
-            } else {
-                throw new IllegalArgumentException("Unexpected item!");
-            }
-
+        Double price = 0.0;
+        for (Furniture f : items) {
+            price += f.getPrice();
         }
+
         return price;
     }
+
+    public <T extends Furniture> T getItem(int position) {
+        T item = (T) items.get(position);
+        return item;
+    }
+
 
 
 }

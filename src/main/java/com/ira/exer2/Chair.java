@@ -3,7 +3,7 @@ package com.ira.exer2;
 /**
  * Created by Iryna on 2/28/15.
  */
-public class Chair {
+public class Chair implements Furniture {
 
     private String color;
 
@@ -38,4 +38,6 @@ public class Chair {
     public void setWeight(Float weight) {
         this.weight = weight;
     }
+
+
 }
