@@ -2,19 +2,23 @@ package com.ira.inputoutput;
 
 import com.ira.exer5_6.*;
 
-import javax.xml.bind.SchemaOutputResolver;
+import java.io.Console;
 import java.util.*;
 
 /**
  * Created by Iryna on 3/10/15.
  */
 public class Menu {
+    public static final String USER_NAME = "test";
+    public static final String PASSWORD = "pass";
     private Map<String, List<?>> availableItems;
+
     public static void main(String[] args) {
         Menu menu = new Menu();
         menu.checkCredentials();
         menu.prepareStock();
         menu.printMenu();
+
         String userInput;
         Scanner scanIn = new Scanner(System.in);
         while (true) {
@@ -25,7 +29,7 @@ public class Menu {
                     menu.displayStock();
                     break;
                 case "2":
-                    System.out.println("Please enter the keyword2");
+                    System.out.println("Please enter the keyword");
                     userInput = scanIn.nextLine();
                     menu.searchByKeyword(userInput);
                     break;
@@ -43,9 +47,23 @@ public class Menu {
     }
 
     private void checkCredentials() {
-        System.out.println("Check for password");
-        System.out.println("Test");
-        ClearUtility.clearConsole();
+        int attempt = 0;
+        while (attempt < 3) {
+            System.out.println("Please enter the login:");
+            Console credentialsConsole = System.console();
+            String userName = credentialsConsole.readLine();
+            System.out.println("Please enter the password:");
+            char[] password = credentialsConsole.readPassword();
+            if (userName.equals(USER_NAME) && new String(password).equals(PASSWORD)) {
+                ClearUtility.clearConsole();
+                return;
+            }
+
+            attempt++;
+
+        }
+        System.out.println("You exceeded the allowed number of attempts. Application shuts down");
+        System.exit(-1);
     }
 
     private void printMenu() {
